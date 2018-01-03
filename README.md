@@ -1,12 +1,9 @@
 # Slight
 
-[![Dependencies](https://david-dm.org/lunoio/slight.svg)](https://david-dm.org/lunoio/slight)
 [![NPM](https://nodei.co/npm/slight.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/slight)
 
 
 Slight is a fast, lightweight and dependency-free HTTP server framework designed for APIs, similar to Express.
-
-Used at [Luno](https://luno.io) to power our User Management API.
 
 ## Install
 
@@ -89,4 +86,4 @@ slight.start(function() {
 });
 ```
 
-If you need more detailed usage examples, take a look at the example directory, the source code (it's quite small and hopefully fairly easy to understand) or create an issue!
+If you need more detailed usage examples, take a look at the example directory, the source code (it's quite small and hopefully fairly easy to understand), or create an issue!

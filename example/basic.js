@@ -1,3 +1,4 @@
+'use strict';
 var Slight = require('../lib/Slight');
 var slight = new Slight({
   port: 3000
@@ -22,7 +23,7 @@ slight.finish(function(err, body, req, res) {
 
   res.setHeader('Server', 'Slight');
 
-  if (String(body) == '[object Object]' || Array.isArray(body)) {
+  if (String(body) === '[object Object]' || Array.isArray(body)) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
     body = JSON.stringify(body);
   }
@@ -35,12 +36,15 @@ slight.get('/', function(req, res, next) {
   next(null, 'hi');
 });
 
-slight.route('GET', '/json', [function(req, res,next) {
-  next(null, { test: true });
-}]);
+slight.route('GET', '/json',
+  [
+    function(req, res, next) {
+      next(null, { test: true });
+    }
+  ]
+);
 
 slight.route('GET', '/:user', function(req, res, next) {
-  // console.log(req,res,next);
   next(new Error('nooo'));
 });
 
